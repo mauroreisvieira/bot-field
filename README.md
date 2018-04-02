@@ -1,6 +1,6 @@
 <p align="center"><img src="assets/images/bot-field.png" width="360"/></p>
 
-See the demo: [Hello Week](https://maurovieirareis.github.io/bot-field/).
+See the demo: [Bot Field](https://maurovieirareis.github.io/bot-field/).
 
 ## Quick start
 
@@ -34,6 +34,6 @@ yarn add bot-field
 
 ## License
 
-**Hello Week** is open-sourced software licensed under the \[MIT license\](http://opensource.org/licenses/MIT)
+**Bot Field** is open-sourced software licensed under the \[MIT license\](http://opensource.org/licenses/MIT)
 
 Created with ♥️ by [@mauroreisvieira](https://twitter.com/mauroreisvieira) in **Portugal**
