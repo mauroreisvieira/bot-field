@@ -1,6 +1,6 @@
 <p align="center"><img src="assets/images/bot-field.png" width="360"/></p>
 
-See the demo: [Bot Field](https://maurovieirareis.github.io/bot-field/).
+See the demo: [Bot Field](https://maurovieirareis.github.io/bot-field/index.html).
 
 ## Quick start
 

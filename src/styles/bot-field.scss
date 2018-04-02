@@ -1,3 +1,7 @@
+$font-light: 300;
+$font-regular: 400;
+$font-bold: 700;
+
 * {
   box-sizing: border-box;
 }
@@ -5,6 +9,16 @@
 html {
   font-size: 14px;
   font-family: 'Source Sans Pro';
+}
+
+body {
+  max-width: 960px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 3rem;
+  border-bottom: 2px solid #ddd;;
 }
 
 /** Form Field **/
@@ -20,7 +34,9 @@ html {
   }
 
   &__label {
+    min-width: 20%;
     margin-right: 12px;
+    font-weight: $font-regular;
   }
 
   &__input {
@@ -28,8 +44,35 @@ html {
     padding: 12px;
     border: 1px solid #ddd;
   }
+
+  &__action {
+    padding: 24px 0;
+  }
 }
 
 .button {
+  display: inline-flex;
+  padding: 12px 24px;
+  border: 0;
+  font-size: .80rem;
+  cursor: pointer;
+  transition: all .3s ease-in;
+  text-transform: uppercase;
 
+  &--send {
+    background-color: #8fbc8f;
+    color: #fff;
+
+    &:hover {
+      background-color: darken(#8fbc8f, 10%);
+    }
+  }
+
+  &--reset {
+    background-color: #6495ed;
+    color: #fff;
+    &:hover {
+      background-color: darken(#6495ed, 10%);
+    }
+  }
 }
