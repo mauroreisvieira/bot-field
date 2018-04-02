@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box; }
+
+/** Form Field **/
+.form {
+  display: flex;
+  flex-direction: column; }
+  .form__fieldset {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 6px; }
+  .form__label {
+    margin-right: 12px; }
+  .form__input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd; }
+
+/*# sourceMappingURL=botfield.css.map*/
