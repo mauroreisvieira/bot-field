@@ -25,38 +25,43 @@ export class BotField {
      * Call
      * @param {CallbackFunction} callback
      */
-    public init(callback: CallbackFunction) {
-        this.options.onLoad.call(this);
-        if (callback) {
-            callback.call(this);
-        }
-    }
+     public init(callback: CallbackFunction) {
+         this.getData('https://randomuser.me/api/');
+     }
 
-    public removeActiveClass(): void {
+     public getData(url: string): void {
+         fetch(url)
+         .then((res: any) => res.json())
+         .then((res: any) => {
+             console.log(res);
+         });
+     }
 
-    }
+     public removeActiveClass(): void {
 
-    public destroy(): void {
-        this.removeActiveClass();
-    }
+     }
 
-    private static extend(options: CallbackFunction): object {
-        const settings: any = {
-            selector: '.bot-field',
-        };
+     public destroy(): void {
+         this.removeActiveClass();
+     }
 
-        const defaultSettings = <any>options;
-        for (const i of Object.keys(defaultSettings)) {
-            settings[i] = defaultSettings[i];
-        }
+     private static extend(options: CallbackFunction): object {
+         const settings: any = {
+             selector: '.bot-field',
+         };
 
-        return settings;
-    }
-}
+         const defaultSettings = <any>options;
+         for (const i of Object.keys(defaultSettings)) {
+             settings[i] = defaultSettings[i];
+         }
 
-import { BotField as MyBotField } from './bot-field';
-export namespace MyModule {
-    export const BotField = MyBotField;
-}
+         return settings;
+     }
+ }
 
-(<any>window).BotField = MyModule.BotField;
+ import { BotField as MyBotField } from './bot-field';
+ export namespace MyModule {
+     export const BotField = MyBotField;
+ }
+
+ (<any>window).BotField = MyModule.BotField;
