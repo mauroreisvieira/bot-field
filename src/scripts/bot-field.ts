@@ -6,6 +6,7 @@ export class BotField {
     private options: any;
     private selector: any;
     private elements: any = [];
+    private dataRandom: any;
 
     constructor (options: any = {}) {
         this.options = BotField.extend(options);
@@ -17,7 +18,6 @@ export class BotField {
             throw new Error('You need to specify a selector!');
         }
 
-        console.log(this.selector);
         this.elements = this.selector.elements;
     }
 
@@ -38,14 +38,29 @@ export class BotField {
             .then((res: any) => res.json())
             .then((res: any) => {
                 this.fieldForm(res.results);
+                console.log('this.dataRandom', this.dataRandom);
             });
     }
 
      public fieldForm(data: any): void {
-         console.log(data.length);
-         for( const i of this.elements) {
-             console.log(i.name);
+         for (const fill of data) {
+             this.dataRandom = fill;
          }
+
+         for (const i of this.elements) {
+             this.autoFill(i.name);
+         }
+     }
+
+     public autoFill(field: any): void {
+        for(const key of Object.keys(this.dataRandom)) {
+            // code
+        }
+
+        for(const fill of this.dataRandom) {
+            console.log(fill);
+        }
+        console.log(field);
      }
 
      public removeActiveClass(): void {

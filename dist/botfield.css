@@ -49,9 +49,14 @@ h1 {
     .button--send:hover {
       background-color: #6fa96f; }
   .button--reset {
-    background-color: #6495ed;
+    background-color: #ed143d;
     color: #fff; }
     .button--reset:hover {
+      background-color: #bf0f30; }
+  .button--fill {
+    background-color: #6495ed;
+    color: #fff; }
+    .button--fill:hover {
       background-color: #3676e8; }
 
 /*# sourceMappingURL=botfield.css.map*/

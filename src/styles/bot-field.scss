@@ -71,6 +71,14 @@ h1 {
   }
 
   &--reset {
+    background-color: #ed143d;
+    color: #fff;
+    &:hover {
+      background-color: darken(#ed143d, 10%);
+    }
+  }
+
+  &--fill {
     background-color: #6495ed;
     color: #fff;
     &:hover {

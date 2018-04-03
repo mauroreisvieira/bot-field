@@ -14,31 +14,32 @@
 				<form action="" id="form-field" class="form">
 					<div class="form__fieldset">
 						<label for="inputName" class="form__label">Name</label>
-						<input type="text" name="inputName" value="" id="inputName" class="form__input" />
+						<input type="text" name="iName" value="" id="inputName" class="form__input" />
 					</div>
 					<div class="form__fieldset">
 						<label for="inputEmail" class="form__label">Email</label>
-						<input type="email" name="inputEmail" value="" id="inputEmail" class="form__input" />
+						<input type="email" name="iEmail" value="" id="inputEmail" class="form__input" />
 					</div>
 					<div class="form__fieldset">
 						<label for="inputPhone" class="form__label">Phone</label>
-						<input type="tel" name="inputPhone" value="" id="inputPhone" class="form__input" />
+						<input type="tel" name="iPhone" value="" id="inputPhone" class="form__input" />
 					</div>
 					<div class="form__fieldset">
 						<label for="inputCell" class="form__label">Cell</label>
-						<input type="number" name="inputCell" value="" id="inputCell" class="form__input" />
+						<input type="number" name="iCell" value="" id="inputCell" class="form__input" />
 					</div>
 					<div class="form__fieldset">
 						<label for="inputCity" class="form__label">City</label>
-						<input type="text" name="inputCity" value="" id="inputCity" class="form__input" />
+						<input type="text" name="iCity" value="" id="inputCity" class="form__input" />
 					</div>
 					<div class="form__fieldset">
 						<label for="inputGender" class="form__label">Gender</label>
-						<input type="text" name="inputGender" value="" id="inputGender" class="form__input" />
+						<input type="text" name="iGender" value="" id="inputGender" class="form__input" />
 					</div>
 					<div class="form__action">
 						<button type="submit" class="button button--send">Send</button>
 						<button type="reset" class="button button--reset">Reset</button>
+						<button type="submit" id="auto-fill" class="button button--fill">Auto Fill</button>
 					</div>
 				</form>
 			</div>
@@ -54,11 +55,17 @@
 		<script src="dist/botfield.min.js" type="text/javascript"></script>
 		<script>
 
+			const autoFill = document.querySelector('#auto-fill');
+			console.log('autoFill', autoFill);
 			const myBot = new BotField({
 				selector: '#form-field'
 			});
 
-			myBot.init();
+			autoFill.addEventListener('click', (ev) => {
+				ev.preventDefault();
+				myBot.init();
+			});
+
 		</script>
 	</body>
 </html>
