@@ -5,6 +5,16 @@ html {
   font-size: 14px;
   font-family: 'Source Sans Pro'; }
 
+body {
+  max-width: 960px;
+  margin: auto; }
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #ddd; }
+
 /** Form Field **/
 .form {
   display: flex;
@@ -15,10 +25,33 @@ html {
     align-items: center;
     margin-bottom: 6px; }
   .form__label {
-    margin-right: 12px; }
+    min-width: 20%;
+    margin-right: 12px;
+    font-weight: 700; }
   .form__input {
     flex: 1;
     padding: 12px;
     border: 1px solid #ddd; }
+  .form__action {
+    padding: 24px 0; }
+
+.button {
+  display: inline-flex;
+  padding: 12px 24px;
+  border: 0;
+  font-size: .80rem;
+  cursor: pointer;
+  transition: all .3s ease-in;
+  text-transform: uppercase; }
+  .button--send {
+    background-color: #8fbc8f;
+    color: #fff; }
+    .button--send:hover {
+      background-color: #6fa96f; }
+  .button--reset {
+    background-color: #6495ed;
+    color: #fff; }
+    .button--reset:hover {
+      background-color: #3676e8; }
 
 /*# sourceMappingURL=botfield.css.map*/

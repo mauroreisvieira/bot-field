@@ -18,6 +18,8 @@ body {
 
 h1 {
   font-size: 3rem;
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
   border-bottom: 2px solid #ddd;;
 }
 
@@ -36,7 +38,7 @@ h1 {
   &__label {
     min-width: 20%;
     margin-right: 12px;
-    font-weight: $font-regular;
+    font-weight: $font-bold;
   }
 
   &__input {

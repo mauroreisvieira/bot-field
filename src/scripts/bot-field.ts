@@ -5,6 +5,7 @@ type CallbackFunction = (...args: any[]) => void;
 export class BotField {
     private options: any;
     private selector: any;
+    private elements: any = [];
 
     constructor (options: any = {}) {
         this.options = BotField.extend(options);
@@ -15,6 +16,9 @@ export class BotField {
         if (this.selector === null) {
             throw new Error('You need to specify a selector!');
         }
+
+        console.log(this.selector);
+        this.elements = this.selector.elements;
     }
 
     public static readonly CSS_CLASSES: any = {
@@ -29,16 +33,23 @@ export class BotField {
          this.getData('https://randomuser.me/api/');
      }
 
-     public getData(url: string): void {
-         fetch(url)
-         .then((res: any) => res.json())
-         .then((res: any) => {
-             console.log(res);
-         });
+    public getData(url: string): void {
+        fetch(url)
+            .then((res: any) => res.json())
+            .then((res: any) => {
+                this.fieldForm(res.results);
+            });
+    }
+
+     public fieldForm(data: any): void {
+         console.log(data.length);
+         for( const i of this.elements) {
+             console.log(i.name);
+         }
      }
 
      public removeActiveClass(): void {
-
+         // code
      }
 
      public destroy(): void {
@@ -59,9 +70,9 @@ export class BotField {
      }
  }
 
- import { BotField as MyBotField } from './bot-field';
- export namespace MyModule {
-     export const BotField = MyBotField;
- }
+import { BotField as MyBotField } from './bot-field';
+export namespace MyModule {
+    export const BotField = MyBotField;
+}
 
- (<any>window).BotField = MyModule.BotField;
+(<any>window).BotField = MyModule.BotField;
